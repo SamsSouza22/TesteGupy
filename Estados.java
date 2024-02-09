@@ -10,14 +10,14 @@ public class Estados {
         estados.put("Outros", 19849.53);
 
         double somaTotal = 0;
-        
-        for(double faturamento: estados.values()){
+
+        for (double faturamento : estados.values()) {
             somaTotal += faturamento;
         }
-        
+
         System.out.println("Percentual de representacao de cada estado: ");
-        for(Map.Entry<String, Double> valores : estados.entrySet()){
-            double percentual = (valores.getValue()/somaTotal) * 100;
+        for (Map.Entry<String, Double> valores : estados.entrySet()) {
+            double percentual = (valores.getValue() / somaTotal) * 100;
             String percentualFormatado = String.format("%.2f", percentual);
             System.out.println(valores.getKey() + ": " + percentualFormatado);
         }
