@@ -12,6 +12,14 @@ public class Inverter {
         scanner.close();
     }
 
+    // funcao recursiva para montar a string invertida
+    /*
+     * enquanto a variavel num nao for zero, a funcao vai
+     * sendo chamada junto do primeiro caracter da String,
+     * que vai sendo modificado a cada chamada de funcao. Dessa
+     * forma, ao chegar no estado de parada num == 1, a funcao retorna
+     * os caracteres no formato invertido
+     */
     public static String inverterString(String info, int num) {
         if (info == null) {
             return null;

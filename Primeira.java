@@ -1,9 +1,10 @@
-class Primeira{
+class Primeira {
+    // replicando o pseudocodigo dado na questao
     public static void main(String[] args) {
         int indice = 13;
         int soma = 0;
         int k = 0;
-        while(k < indice){
+        while (k < indice) {
             k += 1;
             soma += k;
         }

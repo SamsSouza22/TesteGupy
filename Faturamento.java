@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Faturamento {
     public static void main(String[] args) {
+        // usei hashmap por possibilitar acessar todos os valores associados a cada dia,
+        // em pares
         Map<Integer, Double> faturamentoDiario = new HashMap<>();
         faturamentoDiario.put(1, 22174.1664);
         faturamentoDiario.put(2, 24537.6698);
@@ -43,7 +45,10 @@ public class Faturamento {
         System.out.println("Tivemos " + diasAcimaDaMedia + " dias onde o faturamento ficou acima da media mensal");
     }
 
+    // separacao de cada funcao para calcular o que foi pedido na questao
     public static double calcularMinFaturamento(Map<Integer, Double> faturamento) {
+        // usei o valor maximo de Double como referencia para que os valores do hashmap
+        // sejam todos inferiores
         double menor = Double.MAX_VALUE;
 
         for (double valor : faturamento.values()) {
@@ -54,6 +59,8 @@ public class Faturamento {
     }
 
     public static double calcularMaxFaturamento(Map<Integer, Double> faturamento) {
+        // usei o valor minimo de Double como referencia para que os valores do hashmap
+        // sejam todos superiores
         double maior = Double.MIN_VALUE;
 
         for (double valor : faturamento.values()) {
@@ -66,12 +73,15 @@ public class Faturamento {
     public static int calcularDiasAcimaDaMedia(Map<Integer, Double> faturamento) {
         int dias = 0;
         double soma = 0;
-
+        // loop for para realizar a soma dos valores dos faturamentos
         for (double valor : faturamento.values()) {
             soma += valor;
         }
+        // calculo da media do faturamento mensal
         double mediaFaturamento = soma / faturamento.size();
         for (double faturado : faturamento.values()) {
+            // se o faturamento do dia for maior que o faturamento médio mensal, incrementa
+            // a variavel dias
             if (faturado > mediaFaturamento)
                 dias++;
         }

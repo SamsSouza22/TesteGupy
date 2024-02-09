@@ -15,21 +15,21 @@ public class Fibonacci {
         scanner.close();
     }
 
-    //funcao de conferencia de Fibonacci
+    // funcao de conferencia de Fibonacci
     public static boolean pertenceFibonacci(int num) {
-        //valores iniciais da sequencia
+        // valores iniciais da sequencia
         int a = 0;
         int b = 1;
 
-        //caso o loop encontre o numero, retorna true; caso contrario, retorna false
+        // caso o loop encontre o numero, retorna true; caso contrario, retorna false
         while (b <= num) {
 
             if (b == num) {
                 return true;
             }
-            //calcula o proximo valor da sequencia
+            // calcula o proximo valor da sequencia
             int prox = a + b;
-
+            // atribuindo os valores para a conferencia na proxima iteracao do loop
             a = b;
             b = prox;
 
